@@ -1,0 +1,85 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding-top: 50px;
+  margin: 0;
+}
+
+.container {
+  background-color: #1e1e1e;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+  width: 90%;
+  max-width: 420px;
+}
+
+/* หัวข้อ */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #03dac6;
+}
+
+/* กล่องใส่ข้อมูล */
+input {
+  width: 68%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2a2a2a;
+  color: #fff;
+  outline: none;
+}
+
+/* ปุ่มเพิ่ม Task */
+button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #03dac6;
+  color: #000;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #00bfa5;
+}
+
+/* รายการ To-Do */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+  background-color: #2a2a2a;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ปุ่มลบ ❌ */
+li span {
+  color: #ff5252;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  transition: transform 0.1s ease;
+}
+
+li span:hover {
+  transform: scale(1.2);
+}

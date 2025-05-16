@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>📋 To-Do List Naja</h1>
+
+      <input type="text" id="todoInput" placeholder="พิมพ์สิ่งที่ต้องทำ..." />
+      <button onclick="addTask()">เพิ่ม</button>
+
+      <ul id="todoList"></ul>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+    <!-- Firebase Config -->
+    <script src="firebase.js"></script>
+
+    <!-- Javascript -->
+    <script src="script.js"></script>
+  </body>
+</html>
