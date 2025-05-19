@@ -7,11 +7,42 @@ const firebaseConfig = {
   appId: "1:123456789:web:abc123",
 };
 
-// ฟังก์ชั่นเรียกใช้ Firebase service
 firebase.initializeApp(firebaseConfig);
-
-// ตัวแปร db เพื่อที่จะเรียกใช้งาน
 const db = firebase.firestore();
 
-// แชร์ตัวแปร db ให้ script.js ใช้งานได้
-window.db = db;
+// Save task
+function saveToFirestore(task) {
+  db.collection("tasks")
+    .add(task)
+    .then(() => console.log("✅ Task saved"))
+    .catch((err) => console.error("Error saving:", err));
+}
+
+// Load tasks
+function loadTasksFromFirestore(callback) {
+  db.collection("tasks").onSnapshot((snapshot) => {
+    const data = [];
+    snapshot.forEach((doc) => {
+      data.push({ firestoreId: doc.id, ...doc.data() });
+    });
+    callback(data);
+  });
+}
+
+// Update task
+function updateTaskInFirestore(id, updates) {
+  db.collection("tasks")
+    .doc(id)
+    .update(updates)
+    .then(() => console.log("✅ Task updated"))
+    .catch((err) => console.error("Update failed:", err));
+}
+
+// Delete task
+function deleteTaskFromFirestore(id) {
+  db.collection("tasks")
+    .doc(id)
+    .delete()
+    .then(() => console.log("🗑️ Task deleted"))
+    .catch((err) => console.error("Delete failed:", err));
+}
